@@ -1,0 +1,54 @@
+{
+  "name": "react-convert-image",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/react-convert-image.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack && yarn test",
+    "dev": "webpack --progress --colors --watch",
+    "test": "jest src",
+    "test:watch": "yarn test --watch"
+  },
+  "jest": {
+    "setupFiles": [
+      "./internals/jestSetup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "mocks"
+    ]
+  },
+  "dependencies": {
+    "prop-types": "^15.6.1"
+  },
+  "peerDependencies": {
+    "react": "^15.3.0 || ^16.2.0",
+    "react-dom": "^15.3.0 || ^16.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.5.0-alpha.3cc09dcf",
+    "babel-preset-react": "^6.24.1",
+    "canvas-prebuilt": "^1.6.5-prerelease.1",
+    "cross-env": "^5.1.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-to-json": "^3.3.1",
+    "eslint": "^5.4.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-jest": "^21.14.0",
+    "eslint-plugin-react": "^7.7.0",
+    "jest": "^23.5.0",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-test-renderer": "15",
+    "webpack": "^3.10.0"
+  }
+}
