@@ -6,6 +6,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack && yarn test",
     "dev": "webpack --progress --colors --watch",
+    "prepublish": "yarn build",
     "test": "jest src",
     "test:watch": "yarn test --watch"
   },

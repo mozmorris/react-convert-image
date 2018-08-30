@@ -56,6 +56,7 @@ describe('ConvertImage', () => {
       const component = setup({ onConversion });
 
       component.instance().convert();
+
       expect(onConversion).toHaveBeenCalled();
     });
   });
