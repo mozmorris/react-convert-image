@@ -1,6 +1,6 @@
 {
   "name": "react-convert-image",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "lib/react-convert-image.js",
   "scripts": {
@@ -9,6 +9,10 @@
     "prepublish": "yarn build",
     "test": "jest src",
     "test:watch": "yarn test --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mozmorris/react-convert-image.git"
   },
   "jest": {
     "setupFiles": [
