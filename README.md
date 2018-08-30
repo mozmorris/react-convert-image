@@ -1,6 +1,6 @@
 # react-convert-image
 
-React component for image format conversion.
+A quick proof-of-concept React component for image format conversion. Currently converts to WebP. Browser capability dependent.
 
 ## Installation
 
