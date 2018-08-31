@@ -8,7 +8,7 @@ const config = {
   output: {
     path: __dirname + '/lib',
     filename: `${pkg.name}.js`,
-    library: pkg.name,
+    library: 'ConvertImage',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },

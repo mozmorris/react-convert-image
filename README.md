@@ -22,7 +22,7 @@ class Component extends React.Component {
   render() {
     return (
       <ConvertImage
-        img="hello-world.jpg"
+        image="hello-world.jpg"
         onConversion={this.handleConvertedImage}
       />
     );

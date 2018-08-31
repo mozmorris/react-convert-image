@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>React Convert Image</title>
+  <style>
+    body { font-family: "Helvetica Neue", Helvetica, sans-serif; font-weight: 200; margin: 0 auto 50px; max-width: 1124px; }
+    .images div { display: inline-block; width: 50%; }
+    span { display: inline-block; margin-bottom: 5px; }
+    img { display: block; width: 100% }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <script src="https://unpkg.com/prop-types@15.6.1/prop-types.js"></script>
+  <script src="https://unpkg.com/babel-transform-in-browser@6.4.6/dist/btib.min.js"></script>
+  <script src="../lib/react-convert-image.js"></script>
+  <script type="text/es2015">
+    class App extends React.Component {
+      state = { converted: undefined };
+
+      handleConvertedImage = (converted) => this.setState({ converted });
+
+      render() {
+        const { state: { converted } } = this;
+        return (
+          <div>
+            <h1>react-convert-image</h1>
+            <div className="images">
+              <div>
+                <span>Original:</span>
+                <ConvertImage
+                  image="image.jpg"
+                  onConversion={this.handleConvertedImage}
+                />
+              </div>
+              <div>
+                <span>Converted:</span>
+                {converted && (
+                  <img src={converted} />
+                )}
+              </div>
+            </div>
+            <p>View the page source to see the implementation.</p>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(<App />, document.getElementById('root'));
+  </script>
+</body>
+</html>
