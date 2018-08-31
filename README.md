@@ -2,6 +2,8 @@
 
 A quick proof-of-concept React component for image format conversion. Currently converts to WebP. Browser capability dependent.
 
+<a href="http://www.mozmorris.com/react-convert-image/">Click here to see an example implementation.</a>
+
 ## Installation
 
 ```
