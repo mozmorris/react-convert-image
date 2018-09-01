@@ -5,6 +5,7 @@ exports[`ConvertImage render should render the 1`] = `
   format="webp"
   image="data:image/bmp;base64,abc123"
   onConversion={[Function]}
+  quality={0.92}
 >
   <img
     src="data:image/bmp;base64,abc123"

@@ -34,11 +34,12 @@ class Component extends React.Component {
 
 ### Props
 
-| prop              | type     | required | default  | description                                                                |
-| ----------------- | -------- | -------- | -------- | -------------------------------------------------------------------------- |
-| image             | string   | Yes      |          | Path to image or data URL                                                  |
-| onConversion      | function | Yes      |          | Called with base64 data URL of converted image                             |
-| format            | string   | No       | webp     | Target image format e.g 'webp', 'jpeg', 'png'                              |
+| prop              | type     | required | default  | description                                                                     |
+| ----------------- | -------- | -------- | -------- | ------------------------------------------------------------------------------- |
+| image             | string   | Yes      |          | Path to image or data URL                                                       |
+| onConversion      | function | Yes      |          | Called with base64 data URL of converted image                                  |
+| format            | string   | No       | webp     | Target image format e.g 'webp', 'jpeg', 'png'                                   |
+| quality           | number   | No       | 0.92     | A Number between 0 and 1 indicating image quality if the format is jpeg or webp |
 
 ## License
 

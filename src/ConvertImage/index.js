@@ -13,10 +13,12 @@ class ConvertImage extends Component {
     image: PropTypes.string.isRequired,
     format: PropTypes.oneOf(['webp', 'jpeg', 'png']),
     onConversion: PropTypes.func.isRequired,
+    quality: PropTypes.number,
   };
 
   static defaultProps = {
     format: 'webp',
+    quality: 0.92,
   };
 
   state = {
@@ -36,7 +38,7 @@ class ConvertImage extends Component {
   };
 
   convert = () => {
-    const { props: { onConversion, format } } = this;
+    const { props: { onConversion, format, quality } } = this;
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
@@ -44,7 +46,7 @@ class ConvertImage extends Component {
     canvas.height = this.node.naturalHeight;
     ctx.drawImage(this.node, 0, 0);
 
-    const convertedImage = canvas.toDataURL(`image/${format}`);
+    const convertedImage = canvas.toDataURL(`image/${format}`, quality);
 
     this.setState({ convertedImage }, () => onConversion(convertedImage));
   };
