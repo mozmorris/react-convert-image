@@ -11,8 +11,13 @@ import PropTypes from 'prop-types';
 class ConvertImage extends Component {
   static propTypes = {
     image: PropTypes.string.isRequired,
+    format: PropTypes.oneOf(['webp', 'jpeg', 'png']),
     onConversion: PropTypes.func.isRequired,
-  }
+  };
+
+  static defaultProps = {
+    format: 'webp',
+  };
 
   state = {
     convertedImage: undefined,
@@ -28,10 +33,10 @@ class ConvertImage extends Component {
 
   setRef = (node) => {
     this.node = node;
-  }
+  };
 
   convert = () => {
-    const { props: { onConversion } } = this;
+    const { props: { onConversion, format } } = this;
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
@@ -39,10 +44,10 @@ class ConvertImage extends Component {
     canvas.height = this.node.naturalHeight;
     ctx.drawImage(this.node, 0, 0);
 
-    const convertedImage = canvas.toDataURL('image/webp');
+    const convertedImage = canvas.toDataURL(`image/${format}`);
 
     this.setState({ convertedImage }, () => onConversion(convertedImage));
-  }
+  };
 
   render() {
     const { props: { image } } = this;
